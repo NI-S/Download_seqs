@@ -22,6 +22,10 @@ class Uniprot:
             print(self.site.find_element_by_tag_name("body").text)
             self.bestand.writelines(self.site.find_element_by_tag_name("body").text + "\n")
         except:
-            print("kon niet gevonden worden")
+            try:
+                print(self.site.find_element_by_tag_name("body").text)
+                self.bestand.writelines(self.site.find_element_by_tag_name("body").text + "\n")
+            except:
+                print("kon niet gevonden worden")
 
 
